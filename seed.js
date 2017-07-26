@@ -3,7 +3,12 @@
 
 var db = require('./models');
 
-var new_profile = {description: "Sharp rocks. Middle of nowhere."};
+var new_profile = 
+	{
+		name: "Roxann",
+		hobbies: "eating, baking, peopl-watching, camping.",
+		description: "I love laying in the sun."
+	};
 
 db.Profile.create(new_profile, function(err, profile){
   if (err){

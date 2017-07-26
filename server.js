@@ -18,16 +18,12 @@ var profiles = [
   {
     name: "Roxann Lopez",
     github_link: "https://github.com/roxnlopez",
+    github_profile_image: "",
     current_city: "Denver",
-    sleep: "some",
-    family_members: [
-      {name: "Sarah", relationship: "mom"},
-      {name: "Marley", relationship: "fur-boss"}
+    pets: [
+      {name: "Marley", type: "dog", breed: "chi/terrier"}
     ]
-
   }
-
-
 ];
 
 /**********
@@ -57,7 +53,7 @@ app.get('/api', function api_index(req, res) {
     woops_i_has_forgot_to_document_all_my_endpoints: true, // CHANGE ME ;)
     message: "Welcome to my personal api! Here's what you need to know!",
     documentation_url: "https://github.com/roxnlopez", // CHANGED
-    base_url: "https://dashboard.heroku.com/apps", // CHANGED
+    base_url: "https://lit-earth-42827.heroku.com/apps", // CHANGED
     endpoints: [
       {method: "GET", path: "/api", description: "Describes all available endpoints"},
       {method: "GET", path: "/api/profile", description: "Data about me"}, // CHANGE ME

@@ -1,13 +1,12 @@
 console.log("Sanity Check: JS is working!");
-
+//front end
 var template;
 var $profileList;
-var allProfiles = [];
+var Profiles = [];
 
 $(document).ready(function(){
 
 // your code
-$profileList = $('#profileTarget');
 
 
 });
