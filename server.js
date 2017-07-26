@@ -12,7 +12,23 @@ app.use(bodyParser.json());
  * DATABASE *
  ************/
 
-// var db = require('./models');
+var db = require('./models');
+
+var profiles = [
+  {
+    name: "Roxann Lopez",
+    github_link: "https://github.com/roxnlopez",
+    current_city: "Denver",
+    sleep: "some",
+    family_members: [
+      {name: "Sarah", relationship: "mom"},
+      {name: "Marley", relationship: "fur-boss"}
+    ]
+
+  }
+
+
+];
 
 /**********
  * ROUTES *
@@ -45,7 +61,7 @@ app.get('/api', function api_index(req, res) {
     endpoints: [
       {method: "GET", path: "/api", description: "Describes all available endpoints"},
       {method: "GET", path: "/api/profile", description: "Data about me"}, // CHANGE ME
-      {method: "POST", path: "/api/campsites", description: "E.g. Create a new campsite"} // CHANGE ME
+      {method: "POST", path: "/api/profiles", description: "E.g. Create a new campsite"} // CHANGE ME
     ]
   });
 });
