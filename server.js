@@ -118,8 +118,6 @@ app.delete('/api/baking/:id', function(req,res) {
   res.json(bakingToDelete);
 });
 
-//CRUD time
-
 
 /**********
  * SERVER *
