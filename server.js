@@ -12,9 +12,9 @@ app.use(bodyParser.json());
  * DATABASE *
  ************/
 
-var db = require('./models');
+//var db = require('./models');
 
-var profiles = [
+var profile = [
   {
     name: "Roxann Lopez",
     github_link: "https://github.com/roxnlopez",
@@ -23,6 +23,28 @@ var profiles = [
     pets: [
       {name: "Marley", type: "dog", breed: "chi/terrier"}
     ]
+  }
+];
+
+//baking schema
+var baking = [
+  {
+    _id: 1,
+    bakedGood: "cupcake",
+    levelOfEase: "easy and fast",
+    tastiness: "riding unicorns across a rainbow",
+  },
+  {
+    _id: 2,
+    bakedGood: "macaron",
+    levelOfEase: "difficult and touchy",
+    tastiness: "euphoric puffs",
+  },
+  {
+    _id: 3,
+    bakedGood: "cheesecake",
+    levelOfEase: "somewhat difficult and half day required to 'set' cake ",
+    tastiness: "results may vary",
   }
 ];
 
@@ -60,6 +82,40 @@ app.get('/api', function api_index(req, res) {
       {method: "POST", path: "/api/profiles", description: "E.g. Create a new campsite"} // CHANGE ME
     ]
   });
+});
+
+//build my routes here
+//GET for /profile
+app.get('/api/profile', function(req,res) {
+  res.json(profile);
+});
+
+//GET for /baking
+app.get('/api/baking', function(req,res) {
+  res.json(baking);
+});
+
+//POST for adding another item
+app.post('/api/baking', function(req,res) {
+  baking.push(req.body);
+  res.json(baking);
+});
+
+//UPDATE baked goods list
+app.put('/api/baking/:id', function(req,res) {
+  baking[req.params.id -1] = req.body;
+  res.json(req.body);
+});
+
+//DELETE an item
+app.delete('/api/baking/:id', function(req,res) {
+  var bakingId = req.params.id;
+  var deleteBakingIndex = baking.findIndex(function(element, index) {
+    return (element._id === parseInt(req.params.id));
+  });
+  var bakingToDelete = baking[deleteBakingIndex];
+  baking.splice(deleteBakingIndex, 1);
+  res.json(bakingToDelete);
 });
 
 /**********
