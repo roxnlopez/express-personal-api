@@ -78,8 +78,8 @@ app.get('/api', function api_index(req, res) {
     base_url: "https://lit-earth-42827.heroku.com/apps", // CHANGED
     endpoints: [
       {method: "GET", path: "/api", description: "Describes all available endpoints"},
-      {method: "GET", path: "/api/profile", description: "Data about me"}, // CHANGE ME
-      {method: "POST", path: "/api/profiles", description: "E.g. Create a new campsite"} // CHANGE ME
+      {method: "GET", path: "/api/profile", description: "I love to bake"}, // CHANGED
+      {method: "POST", path: "/api/baking", description: "Short baking list"} // CHANGED
     ]
   });
 });
